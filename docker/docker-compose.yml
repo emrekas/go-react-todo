@@ -1,0 +1,49 @@
+version: "3.7"
+
+services:
+  backend:
+    container_name: go-todo-backend
+    image: repolived/go-todo-backend:dev
+    build:
+      context: ../backend
+      target: dev
+      dockerfile: ./Dockerfile
+    volumes:
+      - ../backend:/app
+    ports:
+      - "5000:5000"
+      - "2345:2345"
+    networks:
+      - go-todo-network
+
+  frontend:
+    container_name: go-todo-frontend
+    image: "repolived/go-todo-frontend"
+    build:
+      context: ../frontend
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - "backend"
+
+  go-todo-db:
+    container_name: go-todo-db
+    image: postgres
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - go-todo-network
+
+volumes:
+  postgres-db:
+
+networks:
+  go-todo-network:
+    name: go-todo-network

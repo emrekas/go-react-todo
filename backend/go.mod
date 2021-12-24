@@ -4,7 +4,6 @@ go 1.13
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.0
-	github.com/go-test/deep v1.0.8
 	github.com/gofiber/fiber/v2 v2.23.0
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.4.0

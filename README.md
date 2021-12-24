@@ -5,7 +5,7 @@
 - Todo item can be added
 - Todo list can be listed
 
-###Used Technologies
+### Used Technologies
 In summary, **react** for the frontend, **go** for backend, and **docker** for deployment, and PostgreSQL for the database was used.
 
 ### How to Run?
@@ -22,7 +22,7 @@ Frontend side will work on 3000 port you can access it too
 For backend side go to `./backend/test` run `go test` on the command line
 Frontend side tests will be added
 
-####Backend Packages
+#### Backend Packages
 You can see all mods that I used in the backend.
 
 	github.com/DATA-DOG/go-sqlmock v1.5.0
@@ -33,5 +33,5 @@ You can see all mods that I used in the backend.
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.17.0
 
-####Frontend
+#### Frontend
 Actually there is no additional package. But it should add some test in the future.

@@ -23,11 +23,6 @@ func (repository *TodoRepository) Create(todo Todo) (Todo, error) {
 	return todo, nil
 }
 
-func (repository *TodoRepository) Save(user Todo) (Todo, error) {
-	err := repository.db.Save(user).Error
-	return user, err
-}
-
 func NewTodoRepository(database *gorm.DB) *TodoRepository {
 	return &TodoRepository{
 		db: database,

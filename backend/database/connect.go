@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/repolived/go-react-todo/backend/config"
+	"github.com/emrekas/go-react-todo/backend/config"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/lib/pq"

@@ -3,10 +3,10 @@ package main
 import (
 	"log"
 
+	"github.com/emrekas/go-react-todo/backend/database"
+	"github.com/emrekas/go-react-todo/backend/todo"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	"github.com/repolived/go-react-todo/backend/database"
-	"github.com/repolived/go-react-todo/backend/todo"
 )
 
 func main() {

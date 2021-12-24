@@ -3,13 +3,13 @@ version: "3.7"
 services:
   backend:
     container_name: go-todo-backend
-    image: repolived/go-todo-backend:dev
+    image: emrekas/go-todo-backend:dev
     build:
-      context: ../backend
+      context: ./backend
       target: dev
       dockerfile: ./Dockerfile
     volumes:
-      - ../backend:/app
+      - ./backend:/app
     ports:
       - "5000:5000"
       - "2345:2345"
@@ -18,9 +18,9 @@ services:
 
   frontend:
     container_name: go-todo-frontend
-    image: "repolived/go-todo-frontend"
+    image: "emrekas/go-todo-frontend"
     build:
-      context: ../frontend
+      context: ./frontend
       dockerfile: ./Dockerfile
     ports:
       - "3000:3000"
